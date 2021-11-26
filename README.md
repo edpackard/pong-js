@@ -1,8 +1,11 @@
 # Pong JS
 
+An attempt to code an in-browser Pong clone with JS/CSS/HTML5.
+
 _Coding in progess_
 
-An attempt to code an in-browser Pong clone with JS/CSS/HTML5.
+See current state of program here: https://edpackard.github.io/pong-js/
+(or clone this repo and `open index.html`)
 
 # Sources
 
