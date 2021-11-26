@@ -11,4 +11,4 @@ See current state of program here: https://edpackard.github.io/pong-js/
 
 Canvas resizing & scaling is a trimmed down version of this code: https://github.com/robotspacefish/resize (found via https://dev.to/robotspacefish/resizing-html5-canvas-and-scaling-sprites-5cpe)
 
-The game loop is adapted from this tutorial: https://spicyyoghurt.com/tutorials/html5-javascript-game-development/create-a-proper-game-loop-with-requestanimationframe
+The basic underlying game loop is adapted from this tutorial: https://spicyyoghurt.com/tutorials/html5-javascript-game-development/create-a-proper-game-loop-with-requestanimationframe
