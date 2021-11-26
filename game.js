@@ -2,17 +2,31 @@
 
 const batWidth = 20;
 const batHeight = 100;
+const playerX = 0;
+let playerY = 0;
+let playerDown;
 
 function render() {
-  let randomColor = Math.random() > 0.5 ? "#ff8080" : "#0099b0";
-  ctx.fillStyle = randomColor;
-  ctx.fillRect(0, 0, batWidth, batHeight);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "#ff8080";
+  ctx.fillRect(playerX, playerY, batWidth, batHeight);
   ctx.fillRect(nWidth - batWidth, nHeight - batHeight, batWidth, batHeight);
 }
 
 function gameLoop(timeStamp) {
+  update();
   render();
   window.requestAnimationFrame(gameLoop);
+}
+
+function update() {
+  if (playerY == 0) {
+    playerDown = true;
+  }
+  if (playerY == nHeight - batHeight) {
+    playerDown = false;
+  }
+  playerDown ? playerY++ : playerY--;
 }
 
 window.addEventListener("load", () => {
