@@ -10,4 +10,8 @@ class Bat {
   up() {
     this.y -= this.speed;
   }
+
+  down() {
+    this.y += this.speed;
+  }
 }

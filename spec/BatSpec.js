@@ -25,4 +25,11 @@ describe("Bat", function () {
     newBat.up();
     expect(newBat.y).toEqual(movedY);
   });
+
+  it("y coordinate is increased by 5 by up function", function () {
+    const newBat = new Bat(500);
+    const movedY = newBat.y + 5;
+    newBat.down();
+    expect(newBat.y).toEqual(movedY);
+  });
 });
