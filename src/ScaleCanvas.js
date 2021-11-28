@@ -8,13 +8,11 @@ class ScaleCanvas {
     this.windowPercentage = windowPercentage; // % of browser window taken up by canvas
   }
 
-  resize(ctx, cWindow = window) {
-    let cHeight = this.nHeight; // canvas height - scales when resized
-    let cWidth = this.nWidth; // canvas width - scales when resized
+  resize(ctx, scaleWindow = window) {
     const maxWidth = this.nWidth * this.maxMultiplier;
     const maxHeight = this.nHeight * this.maxMultiplier;
-    cWidth = cWindow.innerWidth;
-    cHeight = cWindow.innerHeight;
+    let cWidth = scaleWindow.innerWidth;
+    let cHeight = scaleWindow.innerHeight;
     // ratio of the native game size width to height:
     const nativeRatio = this.nWidth / this.nHeight;
     const browserWindowRatio = cWidth / cHeight;

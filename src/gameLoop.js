@@ -11,22 +11,22 @@ const gameCanvas = new ScaleCanvas(
   pongBoard.windowPercentage
 );
 
-const batWidth = 20;
-const batHeight = 100;
-const playerX = 0;
-let playerY = 0;
-let playerDown;
+// const batWidth = 20;
+// const batHeight = 100;
+// const playerX = 0;
+// let playerY = 0;
+// let playerDown;
 
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "#ff8080";
-  ctx.fillRect(playerX, playerY, batWidth, batHeight);
-  ctx.fillRect(
-    pongBoard.width - batWidth,
-    pongBoard.height - batHeight,
-    batWidth,
-    batHeight
-  );
+  // ctx.fillStyle = "#ff8080";
+  // ctx.fillRect(playerX, playerY, batWidth, batHeight);
+  // ctx.fillRect(
+  //   pongBoard.width - batWidth,
+  //   pongBoard.height - batHeight,
+  //   batWidth,
+  //   batHeight
+  // );
 }
 
 function gameLoop(timeStamp) {
@@ -36,13 +36,13 @@ function gameLoop(timeStamp) {
 }
 
 function update() {
-  if (playerY == 0) {
-    playerDown = true;
-  }
-  if (playerY == pongBoard.height - batHeight) {
-    playerDown = false;
-  }
-  playerDown ? playerY++ : playerY--;
+  // if (playerY == 0) {
+  //   playerDown = true;
+  // }
+  // if (playerY == pongBoard.height - batHeight) {
+  //   playerDown = false;
+  // }
+  // playerDown ? playerY++ : playerY--;
 }
 
 window.addEventListener("load", () => {
