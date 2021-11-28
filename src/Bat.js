@@ -33,7 +33,10 @@ class Bat {
 
   _errorCheck() {
     if (this.boardHeight < this.height) {
-      throw "Board size is too small";
+      throw "Board height is too small";
+    }
+    if (this.boardWidth < this.width * 2) {
+      throw "Board width is too small";
     }
   }
 }

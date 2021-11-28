@@ -22,7 +22,13 @@ describe("Bat", function () {
   it("will throw an error if Board height too small", function () {
     expect(() => {
       new Bat(99, 100);
-    }).toThrow("Board size is too small");
+    }).toThrow("Board height is too small");
+  });
+
+  it("will throw an error if Board width too small", function () {
+    expect(() => {
+      new Bat(100, 39);
+    }).toThrow("Board width is too small");
   });
 
   it("y coordinate is reduced by 5 by up function", function () {
