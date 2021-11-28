@@ -5,4 +5,8 @@ class Bat {
     this.x = 0;
     this.y = (boardHeight - this.height) / 2;
   }
+
+  up() {
+    this.y -= 5;
+  }
 }

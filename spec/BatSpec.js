@@ -18,4 +18,11 @@ describe("Bat", function () {
     expect(newBat.width).toEqual(20);
     expect(newBat.height).toEqual(100);
   });
+
+  it("y coordinate is reduced by 5 by up function", function () {
+    const newBat = new Bat(500);
+    const movedY = newBat.y - 5;
+    newBat.up();
+    expect(newBat.y).toEqual(movedY);
+  });
 });
