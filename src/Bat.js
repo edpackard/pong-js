@@ -4,9 +4,10 @@ class Bat {
     this.height = 100;
     this.x = 0;
     this.y = (boardHeight - this.height) / 2;
+    this.speed = 5;
   }
 
   up() {
-    this.y -= 5;
+    this.y -= this.speed;
   }
 }
