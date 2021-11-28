@@ -1,8 +1,8 @@
 class Bat {
-  constructor(boardHeight) {
+  constructor(boardHeight, boardWidth, player = 1) {
     this.width = 20;
     this.height = 100;
-    this.x = 0;
+    this.x = player == 1 ? 0 : boardWidth - this.width;
     this.y = (boardHeight - this.height) / 2;
     this.speed = 5;
     this.boardHeight = boardHeight;
