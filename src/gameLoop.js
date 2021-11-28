@@ -11,15 +11,19 @@ const gameCanvas = new ScaleCanvas(
   pongBoard.windowPercentage
 );
 
-const playerBat = new Bat(pongBoard.height);
+const p1Bat = new Bat(pongBoard.height, pongBoard.width);
+const p2Bat = new Bat(pongBoard.height, pongBoard.width, 2);
 
-let upPressed = false;
-let downPressed = false;
+let p1UpPressed = false;
+let p1DownPressed = false;
+let p2UpPressed = false;
+let p2DownPressed = false;
 
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = "#ff8080";
-  ctx.fillRect(playerBat.x, playerBat.y, playerBat.width, playerBat.height);
+  ctx.fillRect(p1Bat.x, p1Bat.y, p1Bat.width, p1Bat.height);
+  ctx.fillRect(p2Bat.x, p2Bat.y, p2Bat.width, p2Bat.height);
 }
 
 function gameLoop(timeStamp) {
@@ -29,27 +33,43 @@ function gameLoop(timeStamp) {
 }
 
 function update() {
-  if (upPressed) {
-    playerBat.up();
+  if (p1UpPressed) {
+    p1Bat.up();
   }
-  if (downPressed) {
-    playerBat.down();
+  if (p1DownPressed) {
+    p1Bat.down();
+  }
+  if (p2UpPressed) {
+    p2Bat.up();
+  }
+  if (p2DownPressed) {
+    p2Bat.down();
   }
 }
 
 function keyDownHandler(event) {
   if (event.keyCode == 65) {
-    upPressed = true;
+    p1UpPressed = true;
   } else if (event.keyCode == 90) {
-    downPressed = true;
+    p1DownPressed = true;
+  }
+  if (event.keyCode == 75) {
+    p2UpPressed = true;
+  } else if (event.keyCode == 77) {
+    p2DownPressed = true;
   }
 }
 
 function keyUpHandler(event) {
   if (event.keyCode == 65) {
-    upPressed = false;
+    p1UpPressed = false;
   } else if (event.keyCode == 90) {
-    downPressed = false;
+    p1DownPressed = false;
+  }
+  if (event.keyCode == 75) {
+    p2UpPressed = false;
+  } else if (event.keyCode == 77) {
+    p2DownPressed = false;
   }
 }
 
