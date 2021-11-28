@@ -14,6 +14,7 @@ const gameCanvas = new ScaleCanvas(
 const playerBat = new Bat(pongBoard.height);
 
 let upPressed = false;
+let downPressed = false;
 
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -31,17 +32,24 @@ function update() {
   if (upPressed) {
     playerBat.up();
   }
+  if (downPressed) {
+    playerBat.down();
+  }
 }
 
 function keyDownHandler(event) {
   if (event.keyCode == 65) {
     upPressed = true;
+  } else if (event.keyCode == 90) {
+    downPressed = true;
   }
 }
 
 function keyUpHandler(event) {
   if (event.keyCode == 65) {
     upPressed = false;
+  } else if (event.keyCode == 90) {
+    downPressed = false;
   }
 }
 
