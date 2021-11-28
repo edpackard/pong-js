@@ -38,4 +38,10 @@ describe("Bat", function () {
     newBat.down();
     expect(newBat.y).toEqual(movedY);
   });
+
+  it("y coordinate cannot go below 0", function () {
+    const newBat = new Bat(102);
+    newBat.up();
+    expect(newBat.y).toEqual(0);
+  });
 });

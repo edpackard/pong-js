@@ -9,7 +9,8 @@ class Bat {
   }
 
   up() {
-    this.y -= this.speed;
+    let move = this.y - this.speed;
+    move < 0 ? (this.y = 0) : (this.y = move);
   }
 
   down() {
