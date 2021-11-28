@@ -9,7 +9,7 @@ See current state of program here: https://edpackard.github.io/pong-js/
 
 # Tests
 
-The classes for this program are unit tested with Jasmine. To run the tests, clone this repo and `open SpecRunner.html' from the root directory.
+The classes for this program are unit tested with Jasmine. To run the tests, clone this repo and `open SpecRunner.html` from the root directory.
 
 # Sources
 
