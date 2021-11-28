@@ -10,6 +10,7 @@ See current state of program here: https://edpackard.github.io/pong-js/
 # Controls
 
 Press A to move bat up.
+Press Z to move bat down.
 
 # Tests
 
