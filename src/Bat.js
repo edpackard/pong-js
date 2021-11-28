@@ -5,7 +5,8 @@ class Bat {
     this.x = 0;
     this.y = (boardHeight - this.height) / 2;
     this.speed = 5;
-    this.errorCheck(boardHeight);
+    this.boardHeight = boardHeight;
+    this.errorCheck();
   }
 
   up() {
@@ -14,11 +15,14 @@ class Bat {
   }
 
   down() {
-    this.y += this.speed;
+    let move = this.y + this.speed;
+    move + this.height > this.boardHeight
+      ? (this.y = this.boardHeight - this.height)
+      : (this.y = move);
   }
 
-  errorCheck(boardHeight) {
-    if (boardHeight < this.height) {
+  errorCheck() {
+    if (this.boardHeight < this.height) {
       throw "Board size is too small";
     }
   }

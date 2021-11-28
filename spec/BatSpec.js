@@ -44,4 +44,10 @@ describe("Bat", function () {
     newBat.up();
     expect(newBat.y).toEqual(0);
   });
+
+  it("y coordinate cannot go above board height minus bat height", function () {
+    const newBat = new Bat(104);
+    newBat.down();
+    expect(newBat.y).toEqual(4);
+  });
 });
