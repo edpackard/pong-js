@@ -2,11 +2,13 @@ class Bat {
   constructor(boardHeight, boardWidth, player = 1) {
     this.width = 20;
     this.height = 100;
-    this.x = player == 1 ? 0 : boardWidth - this.width;
-    this.y = (boardHeight - this.height) / 2;
-    this.speed = 5;
     this.boardHeight = boardHeight;
-    this.errorCheck();
+    this.boardWidth = boardWidth;
+    this._errorCheck();
+    this.player = player;
+    this.x = this._setX();
+    this.y = this._setY();
+    this.speed = 5;
   }
 
   up() {
@@ -21,7 +23,15 @@ class Bat {
       : (this.y = move);
   }
 
-  errorCheck() {
+  _setX() {
+    return this.player == 1 ? 0 : this.boardWidth - this.width;
+  }
+
+  _setY() {
+    return (this.boardHeight - this.height) / 2;
+  }
+
+  _errorCheck() {
     if (this.boardHeight < this.height) {
       throw "Board size is too small";
     }
