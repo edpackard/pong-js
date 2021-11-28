@@ -2,13 +2,13 @@
 
 const ctx = document.getElementById("canvas").getContext("2d");
 
-const game = new Game();
+const pongBoard = new PongBoard();
 
 const gameCanvas = new ScaleCanvas(
-  game.height,
-  game.width,
-  game.maxMultiplier,
-  game.windowPercentage
+  pongBoard.height,
+  pongBoard.width,
+  pongBoard.maxMultiplier,
+  pongBoard.windowPercentage
 );
 
 const batWidth = 20;
@@ -22,8 +22,8 @@ function render() {
   ctx.fillStyle = "#ff8080";
   ctx.fillRect(playerX, playerY, batWidth, batHeight);
   ctx.fillRect(
-    game.width - batWidth,
-    game.height - batHeight,
+    pongBoard.width - batWidth,
+    pongBoard.height - batHeight,
     batWidth,
     batHeight
   );
@@ -39,7 +39,7 @@ function update() {
   if (playerY == 0) {
     playerDown = true;
   }
-  if (playerY == game.height - batHeight) {
+  if (playerY == pongBoard.height - batHeight) {
     playerDown = false;
   }
   playerDown ? playerY++ : playerY--;

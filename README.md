@@ -7,6 +7,10 @@ _Coding in progess_
 See current state of program here: https://edpackard.github.io/pong-js/
 (or clone this repo and `open index.html`)
 
+# Tests
+
+The classes for this program are unit tested with Jasmine. To run the tests, clone this repo and `open SpecRunner.html' from the root directory.
+
 # Sources
 
 Canvas resizing & scaling is a trimmed down version of this code: https://github.com/robotspacefish/resize (found via https://dev.to/robotspacefish/resizing-html5-canvas-and-scaling-sprites-5cpe)
