@@ -19,6 +19,12 @@ describe("Bat", function () {
     expect(newBat.height).toEqual(100);
   });
 
+  it("will throw an error if Board height too small", function () {
+    expect(() => {
+      new Bat(99);
+    }).toThrow("Board size is too small");
+  });
+
   it("y coordinate is reduced by 5 by up function", function () {
     const newBat = new Bat(500);
     const movedY = newBat.y - 5;
