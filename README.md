@@ -7,7 +7,7 @@ _Coding in progess_
 Currently you can:
 
 - control both bats
-- watch the ball bounce off the top/bottom walls - it will reset when it goes off the edges of the X axis
+- watch the ball bounce off a wall and then into oblivion along the X axis
 
 There is no collision detection between the bats and ball yet.
 

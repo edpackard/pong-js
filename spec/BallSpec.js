@@ -100,30 +100,4 @@ describe("Ball", function () {
     newBall.updatePos();
     expect(newBall.dy).toBeLessThan(0);
   });
-
-  it("resets coordinates if it it goes < 0 on x axis", function () {
-    const newBall = new Ball(300, 25);
-    newBall.left();
-    newBall.down();
-    newBall.updatePos();
-    expect(newBall.x).toEqual(2.5);
-    expect(newBall.y).toEqual(140);
-  });
-
-  it("resets coordinates if it it goes > board width on x axis", function () {
-    const newBall = new Ball(300, 25);
-    newBall.right();
-    newBall.up();
-    newBall.updatePos();
-    expect(newBall.x).toEqual(2.5);
-    expect(newBall.y).toEqual(140);
-  });
-
-  it("reverses X vector when reset", function () {
-    const newBall = new Ball(300, 25);
-    newBall.right();
-    newBall.up();
-    newBall.updatePos();
-    expect(newBall.dx).toBeLessThan(0);
-  });
 });

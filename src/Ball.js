@@ -13,17 +13,7 @@ class Ball {
   updatePos() {
     this._normaliseVector();
     for (let i = 0; i < this.speed; i++) {
-      if (
-        this.x + this.dx < 0 ||
-        this.x + this.dx > this.boardWidth - this.size
-      ) {
-        this.x = (this.boardWidth - this.size) / 2;
-        this.y = (this.boardHeight - this.size) / 2;
-        this.dx *= -1;
-        return;
-      } else {
-        this.x += this.dx;
-      }
+      this.x += this.dx;
       if (
         this.y + this.dy < 0 ||
         this.y + this.dy > this.boardHeight - this.size
