@@ -19,6 +19,7 @@ class Ball {
       ) {
         this.x = (this.boardWidth - this.size) / 2;
         this.y = (this.boardHeight - this.size) / 2;
+        this.dx *= -1;
         return;
       } else {
         this.x += this.dx;

@@ -105,9 +105,7 @@ describe("Ball", function () {
     const newBall = new Ball(300, 25);
     newBall.left();
     newBall.down();
-    console.log("coords before", newBall.x, newBall.y);
     newBall.updatePos();
-    console.log("coords after", newBall.x, newBall.y);
     expect(newBall.x).toEqual(2.5);
     expect(newBall.y).toEqual(140);
   });
@@ -116,13 +114,16 @@ describe("Ball", function () {
     const newBall = new Ball(300, 25);
     newBall.right();
     newBall.up();
-    console.log("coords before", newBall.x, newBall.y);
-
     newBall.updatePos();
-    console.log("coords after", newBall.x, newBall.y);
     expect(newBall.x).toEqual(2.5);
     expect(newBall.y).toEqual(140);
   });
 
-  it("reverses vector when reset", function () {});
+  it("reverses X vector when reset", function () {
+    const newBall = new Ball(300, 25);
+    newBall.right();
+    newBall.up();
+    newBall.updatePos();
+    expect(newBall.dx).toBeLessThan(0);
+  });
 });

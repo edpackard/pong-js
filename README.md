@@ -4,16 +4,23 @@ An attempt to code an in-browser Pong clone with JS/CSS/HTML5.
 
 _Coding in progess_
 
+Currently you can:
+
+- control both bats
+- watch the ball bounce off the top/bottom walls - it will reset when it goes off the edges of the X axis
+
+There is no collision detection between the bats and ball yet.
+
 See current state of program here: https://edpackard.github.io/pong-js/
 (or clone this repo and `open index.html`)
 
 # Controls
 
-Press A to move player 1 bat up.
-Press Z to move player 1 bat down.
+- Press A to move player 1 bat up.
+- Press Z to move player 1 bat down.
 
-Press K to move player 2 bat up.
-Press M to move player 2 bat down.
+- Press K to move player 2 bat up.
+- Press M to move player 2 bat down.
 
 # Tests
 
