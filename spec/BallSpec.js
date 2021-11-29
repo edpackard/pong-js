@@ -28,4 +28,19 @@ describe("Ball", function () {
     newBall.right();
     expect(newBall.dx).toEqual(1);
   });
+
+  it("updates x position based on direction (l) and speed", function () {
+    const newBall = new Ball(200, 400);
+    newBall.right();
+    newBall.updatePos();
+    expect(newBall.x).toEqual(195);
+  });
+
+  it("updates x position based on direction (l) and speed", function () {
+    const newBall = new Ball(200, 400);
+    console.log("original x", newBall.x);
+    newBall.left();
+    newBall.updatePos();
+    expect(newBall.x).toEqual(185);
+  });
 });

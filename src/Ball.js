@@ -8,6 +8,12 @@ class Ball {
     this.speed = 5;
   }
 
+  updatePos() {
+    for (let i = 0; i < this.speed; i++) {
+      this.x += this.dx;
+    }
+  }
+
   left() {
     this.dx = -1;
   }
