@@ -9,6 +9,9 @@ class Ball {
   }
 
   updatePos() {
+    console.log("before", this.dx, this.dy);
+    this._normaliseVector();
+    console.log("after", this.dx, this.dy);
     for (let i = 0; i < this.speed; i++) {
       this.x += this.dx;
       this.y += this.dy;
@@ -29,5 +32,11 @@ class Ball {
 
   down() {
     this.dy = 1;
+  }
+
+  _normaliseVector() {
+    let magnitude = Math.sqrt(this.dx * this.dx + this.dy * this.dy);
+    this.dx = this.dx / magnitude;
+    this.dy = this.dy / magnitude;
   }
 }

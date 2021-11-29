@@ -62,4 +62,22 @@ describe("Ball", function () {
     newBall.updatePos();
     expect(newBall.y).toEqual(95);
   });
+
+  it("normalises vectors (1, 1)", function () {
+    const newBall = new Ball(200, 400);
+    newBall.right();
+    newBall.down();
+    newBall.updatePos();
+    expect(newBall.dx).toEqual(0.7071067811865475);
+    expect(newBall.dy).toEqual(0.7071067811865475);
+  });
+
+  it("normalises vectors (-1, -1)", function () {
+    const newBall = new Ball(200, 400);
+    newBall.left();
+    newBall.up();
+    newBall.updatePos();
+    expect(newBall.dx).toEqual(-0.7071067811865475);
+    expect(newBall.dy).toEqual(-0.7071067811865475);
+  });
 });
