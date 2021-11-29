@@ -11,16 +11,13 @@ const gameCanvas = new ScaleCanvas(
   pongBoard.windowPercentage
 );
 
+const controls = new Controls();
+
 const ball = new Ball(pongBoard.height, pongBoard.width);
 ball.down(); // testing
 ball.left(); // testing
 const p1Bat = new Bat(pongBoard.height, pongBoard.width);
 const p2Bat = new Bat(pongBoard.height, pongBoard.width, 2);
-
-let p1UpPressed = false; // extract to Control class
-let p1DownPressed = false; // extract to Control class
-let p2UpPressed = false; // extract to Control class
-let p2DownPressed = false; // extract to Control class
 
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -38,46 +35,15 @@ function gameLoop(timeStamp) {
 
 function update() {
   ball.updatePos(); // testing
-  // extract following conditionals to Control class
-  if (p1UpPressed) {
-    p1Bat.up();
-  }
-  if (p1DownPressed) {
-    p1Bat.down();
-  }
-  if (p2UpPressed) {
-    p2Bat.up();
-  }
-  if (p2DownPressed) {
-    p2Bat.down();
-  }
+  controls.controlUpdate(p1Bat, p2Bat);
 }
 
-// extract keyHandlers to Control class
 function keyDownHandler(event) {
-  if (event.keyCode == 65) {
-    p1UpPressed = true;
-  } else if (event.keyCode == 90) {
-    p1DownPressed = true;
-  }
-  if (event.keyCode == 75) {
-    p2UpPressed = true;
-  } else if (event.keyCode == 77) {
-    p2DownPressed = true;
-  }
+  controls.keyDown(event);
 }
 
 function keyUpHandler(event) {
-  if (event.keyCode == 65) {
-    p1UpPressed = false;
-  } else if (event.keyCode == 90) {
-    p1DownPressed = false;
-  }
-  if (event.keyCode == 75) {
-    p2UpPressed = false;
-  } else if (event.keyCode == 77) {
-    p2DownPressed = false;
-  }
+  controls.keyUp(event);
 }
 
 window.addEventListener("load", () => {
