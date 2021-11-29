@@ -36,11 +36,24 @@ describe("Ball", function () {
     expect(newBall.x).toEqual(195);
   });
 
-  it("updates x position based on direction (l) and speed", function () {
+  it("updates x position based on direction (r) and speed", function () {
     const newBall = new Ball(200, 400);
-    console.log("original x", newBall.x);
     newBall.left();
     newBall.updatePos();
     expect(newBall.x).toEqual(185);
+  });
+
+  it("updates y position based on direction (up) and speed", function () {
+    const newBall = new Ball(200, 400);
+    newBall.up();
+    newBall.updatePos();
+    expect(newBall.y).toEqual(85);
+  });
+
+  it("updates y position based on direction (down) and speed", function () {
+    const newBall = new Ball(200, 400);
+    newBall.down();
+    newBall.updatePos();
+    expect(newBall.y).toEqual(95);
   });
 });

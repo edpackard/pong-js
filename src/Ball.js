@@ -11,6 +11,7 @@ class Ball {
   updatePos() {
     for (let i = 0; i < this.speed; i++) {
       this.x += this.dx;
+      this.y += this.dy;
     }
   }
 
@@ -20,5 +21,13 @@ class Ball {
 
   right() {
     this.dx = 1;
+  }
+
+  up() {
+    this.dy = -1;
+  }
+
+  down() {
+    this.dy = 1;
   }
 }
