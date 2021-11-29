@@ -80,4 +80,24 @@ describe("Ball", function () {
     expect(newBall.dx).toEqual(-0.7071067811865475);
     expect(newBall.dy).toEqual(-0.7071067811865475);
   });
+
+  it("reverses y vector if it hits top boundary", function () {
+    const newBall = new Ball(30, 200);
+    newBall.left();
+    newBall.up();
+    newBall.updatePos();
+    expect(newBall.dy).toBeLessThan(0);
+    newBall.updatePos();
+    expect(newBall.dy).toBeGreaterThan(0);
+  });
+
+  it("reverses y vector if it hits bottom boundary", function () {
+    const newBall = new Ball(30, 200);
+    newBall.right();
+    newBall.down();
+    newBall.updatePos();
+    expect(newBall.dy).toBeGreaterThan(0);
+    newBall.updatePos();
+    expect(newBall.dy).toBeLessThan(0);
+  });
 });
