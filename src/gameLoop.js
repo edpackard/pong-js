@@ -36,6 +36,7 @@ function gameLoop(timeStamp) {
 function update() {
   ball.updatePos(); // testing
   controls.controlUpdate(p1Bat, p2Bat);
+  // collision detection ?
 }
 
 function keyDownHandler(event) {

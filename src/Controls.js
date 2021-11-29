@@ -1,53 +1,49 @@
 class Controls {
   constructor() {
-    this.p1UpPressed = false;
-    this.p1DownPressed = false;
-    this.p2UpPressed = false;
-    this.p2DownPressed = false;
+    this.p1Up = false;
+    this.p1Down = false;
+    this.p2Up = false;
+    this.p2Down = false;
   }
 
-  controlUpdate(p1Bat, p2Bat) {
-    if (this.p1UpPressed) {
-      console.log("uppress", p1Bat);
-      return p1Bat.up();
+  controlUpdate(p1, p2) {
+    if (this.p1Up) {
+      p1.up();
     }
-    if (this.p1DownPressed) {
-      console.log("downpress", p1Bat);
-      return p1Bat.down();
+    if (this.p1Down) {
+      p1.down();
     }
-    if (this.p2UpPressed) {
-      return p2Bat.up();
+    if (this.p2Up) {
+      p2.up();
     }
-    if (this.p2DownPressed) {
-      return p2Bat.down();
+    if (this.p2Down) {
+      p2.down();
     }
   }
 
   keyDown(event) {
     if (event.keyCode == 65) {
-      this.p1UpPressed = true;
-      console.log("conditional is:", this.p1UpPressed);
+      this.p1Up = true;
     } else if (event.keyCode == 90) {
-      this.p1DownPressed = true;
+      this.p1Down = true;
     }
     if (event.keyCode == 75) {
-      this.p2UpPressed = true;
+      this.p2Up = true;
     } else if (event.keyCode == 77) {
-      this.p2DownPressed = true;
+      this.p2Down = true;
     }
-    console.log("at end of function conditional is:", this.p1UpPressed);
   }
 
   keyUp(event) {
     if (event.keyCode == 65) {
-      this.p1UpPressed = false;
+      this.p1Up = false;
     } else if (event.keyCode == 90) {
-      this.p1DownPressed = false;
+      this.p1Down = false;
     }
     if (event.keyCode == 75) {
-      this.p2UpPressed = false;
+      this.p2Up = false;
     } else if (event.keyCode == 77) {
-      this.p2DownPressed = false;
+      this.p2Down = false;
     }
   }
 }
