@@ -6,6 +6,12 @@ describe("Ball", function () {
     expect(newBall.size).toEqual(20);
   });
 
+  it("has default direction vectors of 0", function () {
+    const newBall = new Ball();
+    expect(newBall.dx).toEqual(0);
+    expect(newBall.dy).toEqual(0);
+  });
+
   it("has starting speed of 5", function () {
     const newBall = new Ball();
     expect(newBall.size).toEqual(20);
