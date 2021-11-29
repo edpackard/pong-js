@@ -14,10 +14,10 @@ const gameCanvas = new ScaleCanvas(
 const p1Bat = new Bat(pongBoard.height, pongBoard.width);
 const p2Bat = new Bat(pongBoard.height, pongBoard.width, 2);
 
-let p1UpPressed = false;
-let p1DownPressed = false;
-let p2UpPressed = false;
-let p2DownPressed = false;
+let p1UpPressed = false; // extract to Control class
+let p1DownPressed = false; // extract to Control class
+let p2UpPressed = false; // extract to Control class
+let p2DownPressed = false; // extract to Control class
 
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -33,6 +33,7 @@ function gameLoop(timeStamp) {
 }
 
 function update() {
+  // extract following conditionals to Control class
   if (p1UpPressed) {
     p1Bat.up();
   }
@@ -47,6 +48,7 @@ function update() {
   }
 }
 
+// extract keyHandlers to Control class
 function keyDownHandler(event) {
   if (event.keyCode == 65) {
     p1UpPressed = true;
