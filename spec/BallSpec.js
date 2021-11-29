@@ -20,12 +20,12 @@ describe("Ball", function () {
   it("can move left", function () {
     const newBall = new Ball(200, 400);
     newBall.left();
-    expect(newBall.dx).toEqual(185);
+    expect(newBall.dx).toEqual(-1);
   });
 
-  it("can move down", function () {
+  it("can move right", function () {
     const newBall = new Ball(200, 400);
-    newBall.down();
-    expect(newBall.dy).toEqual(95);
+    newBall.right();
+    expect(newBall.dx).toEqual(1);
   });
 });
