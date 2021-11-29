@@ -11,6 +11,7 @@ const gameCanvas = new ScaleCanvas(
   pongBoard.windowPercentage
 );
 
+const ball = new Ball(pongBoard.height, pongBoard.width);
 const p1Bat = new Bat(pongBoard.height, pongBoard.width);
 const p2Bat = new Bat(pongBoard.height, pongBoard.width, 2);
 
@@ -24,6 +25,7 @@ function render() {
   ctx.fillStyle = "#ff8080";
   ctx.fillRect(p1Bat.x, p1Bat.y, p1Bat.width, p1Bat.height);
   ctx.fillRect(p2Bat.x, p2Bat.y, p2Bat.width, p2Bat.height);
+  ctx.fillRect(ball.x, ball.y, ball.size, ball.size);
 }
 
 function gameLoop(timeStamp) {
