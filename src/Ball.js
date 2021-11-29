@@ -1,6 +1,7 @@
 class Ball {
   constructor(boardHeight, boardWidth) {
     this.boardHeight = boardHeight;
+    this.boardWidth = boardWidth;
     this.size = 20;
     this.x = (boardWidth - this.size) / 2;
     this.y = (boardHeight - this.size) / 2;
@@ -12,7 +13,16 @@ class Ball {
   updatePos() {
     this._normaliseVector();
     for (let i = 0; i < this.speed; i++) {
-      this.x += this.dx;
+      if (
+        this.x + this.dx < 0 ||
+        this.x + this.dx > this.boardWidth - this.size
+      ) {
+        this.x = (this.boardWidth - this.size) / 2;
+        this.y = (this.boardHeight - this.size) / 2;
+        return;
+      } else {
+        this.x += this.dx;
+      }
       if (
         this.y + this.dy < 0 ||
         this.y + this.dy > this.boardHeight - this.size

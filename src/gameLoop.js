@@ -12,6 +12,8 @@ const gameCanvas = new ScaleCanvas(
 );
 
 const ball = new Ball(pongBoard.height, pongBoard.width);
+ball.down(); // testing
+ball.left(); // testing
 const p1Bat = new Bat(pongBoard.height, pongBoard.width);
 const p2Bat = new Bat(pongBoard.height, pongBoard.width, 2);
 
@@ -35,6 +37,7 @@ function gameLoop(timeStamp) {
 }
 
 function update() {
+  ball.updatePos(); // testing
   // extract following conditionals to Control class
   if (p1UpPressed) {
     p1Bat.up();
