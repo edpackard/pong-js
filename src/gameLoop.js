@@ -40,11 +40,11 @@ function update() {
 }
 
 function keyDownHandler(event) {
-  controls.keyDown(event);
+  controls.keyPress(event, true);
 }
 
 function keyUpHandler(event) {
-  controls.keyUp(event);
+  controls.keyPress(event, false);
 }
 
 window.addEventListener("load", () => {

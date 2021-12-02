@@ -1,9 +1,13 @@
 class Controls {
-  constructor() {
+  constructor(p1UpKey = 65, p1DownKey = 90, p2UpKey = 75, p2DownKey = 77) {
     this.p1Up = false;
     this.p1Down = false;
     this.p2Up = false;
     this.p2Down = false;
+    this.p1UpKey = p1UpKey;
+    this.p1DownKey = p1DownKey;
+    this.p2UpKey = p2UpKey;
+    this.p2DownKey = p2DownKey;
   }
 
   controlUpdate(p1, p2) {
@@ -21,29 +25,16 @@ class Controls {
     }
   }
 
-  keyDown(event) {
-    if (event.keyCode == 65) {
-      this.p1Up = true;
-    } else if (event.keyCode == 90) {
-      this.p1Down = true;
+  keyPress(event, isPressed) {
+    if (event.keyCode == this.p1UpKey) {
+      this.p1Up = isPressed;
+    } else if (event.keyCode == this.p1DownKey) {
+      this.p1Down = isPressed;
     }
-    if (event.keyCode == 75) {
-      this.p2Up = true;
-    } else if (event.keyCode == 77) {
-      this.p2Down = true;
-    }
-  }
-
-  keyUp(event) {
-    if (event.keyCode == 65) {
-      this.p1Up = false;
-    } else if (event.keyCode == 90) {
-      this.p1Down = false;
-    }
-    if (event.keyCode == 75) {
-      this.p2Up = false;
-    } else if (event.keyCode == 77) {
-      this.p2Down = false;
+    if (event.keyCode == this.p2UpKey) {
+      this.p2Up = isPressed;
+    } else if (event.keyCode == this.p2DownKey) {
+      this.p2Down = isPressed;
     }
   }
 }
