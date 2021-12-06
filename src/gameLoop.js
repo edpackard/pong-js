@@ -22,6 +22,7 @@ const p2Bat = new Bat(pongBoard.gameHeight, pongBoard.width, 2);
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawDividingLine();
+  drawInstructionText();
   drawGameObjects();
 }
 
@@ -52,6 +53,18 @@ function drawDividingLine() {
   ctx.moveTo(0, pongBoard.infobarY(0));
   ctx.lineTo(pongBoard.width, pongBoard.infobarY(0));
   ctx.stroke();
+}
+
+function drawInstructionText() {
+  ctx.textAlign = "center";
+  ctx.textBaseline = "top";
+  ctx.font = "48px Impact";
+  ctx.fillText("Pong-JS", canvas.width / 2, pongBoard.infobarY(10));
+  ctx.font = "24px Impact";
+  ctx.fillText("Player 1 controls:", canvas.width / 2, pongBoard.infobarY(70));
+  ctx.fillText("A = Up Z = Down", canvas.width / 2, pongBoard.infobarY(100));
+  ctx.fillText("Player 2 controls:", canvas.width / 2, pongBoard.infobarY(130));
+  ctx.fillText("K = Up M = Down", canvas.width / 2, pongBoard.infobarY(160));
 }
 
 function drawGameObjects() {
