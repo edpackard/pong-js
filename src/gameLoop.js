@@ -13,18 +13,16 @@ const gameCanvas = new ScaleCanvas(
 
 const controls = new Controls();
 
-const ball = new Ball(pongBoard.height, pongBoard.width);
+const ball = new Ball(pongBoard.gameHeight, pongBoard.width);
 ball.down(); // testing
 ball.left(); // testing
-const p1Bat = new Bat(pongBoard.height, pongBoard.width);
-const p2Bat = new Bat(pongBoard.height, pongBoard.width, 2);
+const p1Bat = new Bat(pongBoard.gameHeight, pongBoard.width);
+const p2Bat = new Bat(pongBoard.gameHeight, pongBoard.width, 2);
 
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "#ff8080";
-  ctx.fillRect(p1Bat.x, p1Bat.y, p1Bat.width, p1Bat.height);
-  ctx.fillRect(p2Bat.x, p2Bat.y, p2Bat.width, p2Bat.height);
-  ctx.fillRect(ball.x, ball.y, ball.size, ball.size);
+  drawDividingLine();
+  drawGameObjects();
 }
 
 function gameLoop(timeStamp) {
@@ -45,6 +43,23 @@ function keyDownHandler(event) {
 
 function keyUpHandler(event) {
   controls.keyPress(event, false);
+}
+
+function drawDividingLine() {
+  ctx.lineWidth = 3;
+  ctx.strokeStyle = "#ffffff";
+  ctx.beginPath();
+  ctx.moveTo(0, pongBoard.infobarY(0));
+  ctx.lineTo(pongBoard.width, pongBoard.infobarY(0));
+  ctx.stroke();
+}
+
+function drawGameObjects() {
+  ctx.fillStyle = "#ff8080";
+  [p1Bat, p2Bat].forEach((bat) =>
+    ctx.fillRect(bat.x, bat.y, bat.width, bat.height)
+  );
+  ctx.fillRect(ball.x, ball.y, ball.size, ball.size);
 }
 
 window.addEventListener("load", () => {
