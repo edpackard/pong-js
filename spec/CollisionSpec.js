@@ -34,10 +34,10 @@ describe("Collision", function () {
     expect(collision.isColliding(obj1, obj2)).toBe(false);
   });
 
-  // it("detects diff Y plane: non-collision", function () {
-  //   const obj1 = { x: 10, y: 10, height: 10, width: 10 };
-  //   const obj2 = { x: 10, y: 25, height: 10, width: 10 };
-  //   collision = new Collision();
-  //   expect(collision.isColliding(obj1, obj2)).toBe(false);
-  // });
+  it("detects same X plane: non-collision: obj2 high y", function () {
+    const obj1 = { x: 99, y: 10, height: 10, width: 10 };
+    const obj2 = { x: 99, y: 25, height: 10, width: 10 };
+    collision = new Collision();
+    expect(collision.isColliding(obj1, obj2)).toBe(false);
+  });
 });
