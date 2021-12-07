@@ -72,7 +72,7 @@ function drawGameObjects() {
   [p1Bat, p2Bat].forEach((bat) =>
     ctx.fillRect(bat.x, bat.y, bat.width, bat.height)
   );
-  ctx.fillRect(ball.x, ball.y, ball.size, ball.size);
+  ctx.fillRect(ball.x, ball.y, ball.width, ball.height);
 }
 
 window.addEventListener("load", () => {

@@ -1,10 +1,11 @@
 class Ball {
-  constructor(boardHeight, boardWidth) {
+  constructor(boardHeight, boardWidth, size = 20) {
     this.boardHeight = boardHeight;
     this.boardWidth = boardWidth;
-    this.size = 20;
-    this.x = (boardWidth - this.size) / 2;
-    this.y = (boardHeight - this.size) / 2;
+    this.height = size;
+    this.width = size;
+    this.x = (boardWidth - this.width) / 2;
+    this.y = (boardHeight - this.height) / 2;
     this.dx = 0;
     this.dy = 0;
     this.speed = 5;
@@ -16,7 +17,7 @@ class Ball {
       this.x += this.dx;
       if (
         this.y + this.dy < 0 ||
-        this.y + this.dy > this.boardHeight - this.size
+        this.y + this.dy > this.boardHeight - this.height
       ) {
         this.dy *= -1;
       }

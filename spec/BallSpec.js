@@ -3,7 +3,14 @@
 describe("Ball", function () {
   it("has default size of 20 x 20", function () {
     const newBall = new Ball();
-    expect(newBall.size).toEqual(20);
+    expect(newBall.height).toEqual(20);
+    expect(newBall.width).toEqual(20);
+  });
+
+  it("can set different size", function () {
+    const newBall = new Ball(1000, 1000, 10);
+    expect(newBall.height).toEqual(10);
+    expect(newBall.width).toEqual(10);
   });
 
   it("has default direction vectors of 0", function () {
@@ -14,7 +21,7 @@ describe("Ball", function () {
 
   it("has starting speed of 5", function () {
     const newBall = new Ball();
-    expect(newBall.size).toEqual(20);
+    expect(newBall.speed).toEqual(5);
   });
 
   it("has starting coordinates in middle of board", function () {
